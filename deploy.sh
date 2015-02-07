@@ -28,7 +28,7 @@ sleep 1
 rm -rf $tomcat_logger/*
 echo "clear tomcat logger successful!"
 sleep 1
-rm -rf $tomcat_word/*
+rm -rf $tomcat_work/*
 echo "clear tomcat cache successful!"
 sleep 1
 rm -rf $app_logger/*
