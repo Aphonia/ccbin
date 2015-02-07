@@ -12,7 +12,8 @@ app_logger=/root/logs
 
 java_id=$(ps -ef |grep java |grep -w 'java'|grep -v 'grep'|awk '{print $2}')
 
-if [[ "$java_id" = "" ]] then
+if [[ "$java_id" = "" ]] 
+then
 	echo "java process not exists"
 else
 	echo "shutdown processing..."
