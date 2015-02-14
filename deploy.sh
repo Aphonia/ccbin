@@ -34,7 +34,7 @@ sleep 1
 rm -rf $app_logger/*
 echo "clear app logger successful!"
 sleep 1
-cp $app_path/* $tomcat_webapps
+cp -r $app_path/* $tomcat_webapps
 $startup
 echo "start tomcat ..."
 sleep 5
