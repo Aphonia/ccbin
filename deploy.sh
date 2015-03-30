@@ -1,8 +1,8 @@
 #!/bin/bash
 app_name="webserver-htdoc-1.0"
-app_path=build/webserver/htdoc/target/$app_name
+app_path=/root/ccbin/build/htdoc/target/$app_name
 
-tomcat_home=/usr/local/tomcat-7
+tomcat_home=/usr/local/tomcat7
 
 tomcat_webapps=$tomcat_home/webapps/ROOT
 tomcat_logger=$tomcat_home/logs
@@ -12,15 +12,15 @@ app_logger=/root/logs
 
 java_id=$(ps -ef |grep java |grep -w 'java'|grep -v 'grep'|awk '{print $2}')
 
-if [[ "$java_id" = "" ]] 
+if [[ "$java_id" = "" ]]
 then
-	echo "java process not exists"
+        echo "java process not exists"
 else
-	echo "shutdown processing..."
-	kill -9 $java_id
-	sleep 3
-	echo "pid[$java_id]shutdown complete"
-	sleep 1
+        echo "shutdown processing..."
+        kill -9 $java_id
+        sleep 3
+        echo "pid[$java_id]shutdown complete"
+        sleep 1
 fi
 rm -rf $tomcat_webapps/*
 echo "clear tomcat webapps successful!"
