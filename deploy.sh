@@ -9,6 +9,7 @@ tomcat_logger=$tomcat_home/logs
 tomcat_work=$tomcat_home/work
 startup=$tomcat_home/bin/startup.sh
 app_logger=/root/logs
+date_name=`date '+%Y%m%d%H%M%S'`
 
 java_id=$(ps -ef |grep java |grep -w 'java'|grep -v 'grep'|awk '{print $2}')
 
@@ -22,6 +23,7 @@ else
         echo "pid[$java_id]shutdown complete"
         sleep 1
 fi
+zip -r $date_name.log.zip $app_logger
 rm -rf $tomcat_webapps/*
 echo "clear tomcat webapps successful!"
 sleep 1
